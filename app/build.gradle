@@ -66,3 +66,7 @@ jar {
         attributes 'Main-Class': application.mainClass
     }
 }
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

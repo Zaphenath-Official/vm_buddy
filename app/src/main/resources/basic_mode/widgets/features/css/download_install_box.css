@@ -1,0 +1,62 @@
+/* Style for the blur pane */
+#download_blur_pane {
+    -fx-background-color: rgba(0, 0, 0, 0.3); /* JavaFX semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.3); /* Standard semi-transparent background */
+    -fx-padding: 10; /* JavaFX padding */
+    padding: 10px; /* Standard padding */
+}
+
+/* Style for the outer AnchorPane */
+#download_install_box {
+    -fx-background-color: DarkSlateGrey; /* Background color */
+    background-color: DarkSlateGrey; /* Standard background color */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 0, 4); /* Drop shadow */
+    box-shadow: 0px, 4px, 10px, rgba(0, 0, 0, 0.5); /* Standard shadow effect */
+    -fx-padding: 10; /* Padding */
+    padding: 10px; /* Standard padding */
+}
+
+/* Style for the title label */
+#title_label {
+    -fx-text-fill: white; /* Text color */
+    color: white; /* Standard text color */
+    -fx-font-size: 14px; /* Font size */
+    font-size: 14px; /* Standard font size */
+    -fx-font-family: "Arial Black"; /* Font family */
+    font-family: "Arial Black"; /* Standard font family */
+}
+
+/* Style for the subtitle label */
+#subtitle_label {
+    -fx-text-fill: white; /* Text color */
+    color: white; /* Standard text color */
+    -fx-font-size: 12px; /* Font size */
+    font-size: 12px; /* Standard font size */
+    -fx-font-family: "Franklin Gothic Medium"; /* Font family */
+    font-family: "Franklin Gothic Medium"; /* Standard font family */
+}
+
+/* Style for the status label */
+#status_label {
+    -fx-text-fill: white; /* Text color */
+    color: white; /* Standard text color */
+    -fx-font-size: 12px; /* Font size */
+    font-size: 12px; /* Standard font size */
+}
+
+/* Style for the progress bar */
+#progress_bar {
+    -fx-accent: white; /* Progress bar color */
+}
+
+/* Style for the buttons */
+#cancel_button, #next_button {
+    -fx-background-color: DarkSlateGrey; /* Button color */
+    background-color: DarkSlateGrey; /* Standard button color */
+    -fx-text-fill: white; /* Text color */
+    color: white; /* Standard text color */
+    -fx-background-radius: 15; /* Rounded corners */
+    border-radius: 15px; /* Standard rounded corners */
+    -fx-padding: 5; /* Padding inside the button */
+    padding: 5px; /* Standard padding */
+}

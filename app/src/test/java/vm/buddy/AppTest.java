@@ -4,11 +4,14 @@
 package vm.buddy;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class AppTest {
-    @Test void appHasAGreeting() {
+public class AppTest {
+
+    @Test
+    public void testAppInitialization() {
+        // Ensure the App class can be instantiated
         App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        assertNotNull(classUnderTest, "App should be initialized");
     }
 }

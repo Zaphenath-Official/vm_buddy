@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="virtualizer_rounded_pane" prefHeight="400.0" prefWidth="400.0" stylesheets="@../css/virtualizer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vm.buddy.basic_mode.services.controllers.VirtualizerController">
+   <children>
+      <Pane fx:id="virtualizer_blur_pane" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <Label fx:id="title_label" layoutX="15.0" layoutY="16.0" text="VM Buddy">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="close_icon" fitHeight="30.0" fitWidth="30.0" layoutX="363.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/ico.cross.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="subtitle_label" layoutX="136.0" layoutY="71.0" text="Choose Your Virtualizer">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="13.0" />
+               </font>
+            </Label>
+            <VBox layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <!-- Assign the ToggleGroup to the RadioButtons -->
+                  <Pane fx:id="virtualbox_pane" prefHeight="40.0" prefWidth="300.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <RadioButton fx:id="virtualbox_option" layoutX="14.0" layoutY="9.0" mnemonicParsing="false">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="virtualizerGroup" />
+                           </toggleGroup></RadioButton>
+                        <Label fx:id="virtualbox_label" layoutX="99.0" layoutY="12.0" text="VirtualBox 22.26.01" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="vmware_pane" prefHeight="40.0" prefWidth="300.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <RadioButton fx:id="vmware_option" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" toggleGroup="$virtualizerGroup" />
+                        <Label fx:id="vmware_label" layoutX="99.0" layoutY="12.0" text="VMWare 22.26.01" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="qemu_pane" prefHeight="40.0" prefWidth="300.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <RadioButton fx:id="qemu_option" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" toggleGroup="$virtualizerGroup" />
+                        <Label fx:id="qemu_label" layoutX="99.0" layoutY="12.0" text="QEMU 22.26.01" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="local_virtualizer_pane" prefHeight="40.0" prefWidth="300.0">
+                     <children>
+                        <Group disable="true" layoutX="41.0" layoutY="-3.0">
+                           <children>
+                              <Label layoutX="187.0" text=":" textFill="#f8f0f0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="virtualizer_textfield" layoutX="31.0" layoutY="8.0" promptText="choose local virtualizer" />
+                              <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="198.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../OS%20%20Virtual/virtualizer/src/assets/file_picker.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                        <RadioButton fx:id="qemu_option1" layoutX="15.0" layoutY="7.0" mnemonicParsing="false">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="virtualizerGroup1" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <ButtonBar layoutX="50.0" layoutY="329.0" prefHeight="40.0" prefWidth="300.0">
+              <buttons>
+                <Button fx:id="back_button" minWidth="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Back" />
+                <Button fx:id="download_button" mnemonicParsing="false" onAction="#handleDownloadAndInstall" text="Download / Install" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="setup_vm_anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="outer-pane" stylesheets="@../css/setup_vm.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="setup_vm_pane" prefHeight="400.0" prefWidth="600.0" styleClass="inner-pane">
+         <children>
+            <Label fx:id="setup_vm_label" layoutX="68.0" layoutY="56.0" minHeight="40.0" prefHeight="40.0" prefWidth="465.0" text="Set-up Your Virtual Machine (optional)" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="229.0" layoutY="100.0" orientation="VERTICAL" prefHeight="227.0" prefWidth="0.0" />
+            <Button fx:id="back_button" layoutX="41.0" layoutY="349.0" mnemonicParsing="false" prefWidth="70.0" text="Back" />
+            <Button fx:id="setup_button" layoutX="123.0" layoutY="349.0" mnemonicParsing="false" prefWidth="70.0" text="Set" />
+            <Button fx:id="Config_button" layoutX="334.0" layoutY="302.0" mnemonicParsing="false" prefWidth="150.0" text="Configure Settings of VM" />
+            <Label layoutX="370.0" layoutY="88.0" text="VM Configurations" underline="true">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Pane fx:id="Config_pane" disable="true" layoutX="244.0" layoutY="108.0" prefHeight="184.0" prefWidth="344.0">
+               <children>
+                  <Group layoutX="5.0" layoutY="19.0">
+                     <children>
+                        <CheckBox layoutX="2.0" layoutY="4.0" mnemonicParsing="false" selected="true" />
+                        <CheckBox layoutX="2.0" layoutY="32.0" mnemonicParsing="false" selected="true" />
+                        <CheckBox layoutX="2.0" layoutY="63.0" mnemonicParsing="false" selected="true" />
+                        <CheckBox layoutX="2.0" layoutY="94.0" mnemonicParsing="false" selected="true" />
+                        <CheckBox layoutX="2.0" layoutY="125.0" mnemonicParsing="false" selected="true" />
+                        <Label fx:id="ram_label" layoutX="26.0" layoutY="4.0" text="RAM" />
+                        <Label fx:id="disk_label" layoutX="26.0" layoutY="32.0" text="HDD Size" />
+                        <Label fx:id="cpu_label" layoutX="26.0" layoutY="63.0" text="CPU" />
+                        <Label fx:id="acceleration_label" layoutX="26.0" layoutY="94.0" text="3D acceleration" />
+                        <Label fx:id="graphic_label" layoutX="26.0" layoutY="125.0" text="Graphics" />
+                        <TextField alignment="CENTER_RIGHT" layoutX="124.0" promptText="2056" />
+                        <TextField alignment="CENTER_RIGHT" layoutX="124.0" layoutY="59.0" promptText="4" />
+                        <TextField alignment="CENTER_RIGHT" layoutX="124.0" layoutY="28.0" promptText="4" />
+                        <TextField alignment="CENTER_RIGHT" layoutX="124.0" layoutY="90.0" promptText="True" />
+                        <TextField alignment="CENTER_RIGHT" layoutX="124.0" layoutY="121.0" promptText="Intel Graphics" />
+                        <Label fx:id="ram_label" layoutX="287.0" layoutY="4.0" text="[ MB ]" />
+                        <Label fx:id="disk_label" layoutX="288.0" layoutY="32.0" text="[ GB ]" />
+                        <Label fx:id="cpu_label" layoutX="286.0" layoutY="63.0" text="[ Cores ]" />
+                     </children>
+                  </Group>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Pane>
+            <Pane fx:id="local_vm_dir_pane" layoutX="266.0" layoutY="335.0" prefHeight="55.0" prefWidth="300.0">
+               <children>
+                  <Group layoutX="38.0" layoutY="4.0">
+                     <children>
+                        <TextField promptText="C:\" />
+                        <Label layoutX="6.0" layoutY="26.0" text="( local virtual machine )" textFill="#fff9f9" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="154.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../OS%20%20Virtual/virtualizer/src/assets/file_picker.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="145.0" layoutY="4.0" text=":" textFill="#f8f4f4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="236.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../OS%20%20Virtual/virtualizer/src/assets/play.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Group fx:id="vm_pane_2" layoutX="41.0" layoutY="93.0">
+         <children>
+            <ImageView fx:id="vm_logo_2" fitHeight="70.0" fitWidth="70.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="setup_pane" layoutY="6.0" prefHeight="227.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="16.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="os_type_label" layoutX="36.0" layoutY="173.0" text="windows vm" />
+                  <TextField layoutX="25.0" layoutY="135.0" prefWidth="100.0" promptText="Name your VM" styleClass="text-field" />
+                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="40.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../OS%20%20Virtual/virtualizer/src/assets/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Group>
+      <Label fx:id="title_label" layoutX="14.0" layoutY="14.0" prefWidth="200.0" text="VM Buddy">
+         <font>
+            <Font name="Georgia Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="close_icon" fitHeight="30.0" fitWidth="30.0" layoutX="555.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/ico.cross.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

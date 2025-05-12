@@ -37,9 +37,8 @@ You can get vm buddy through the following methods:
 
 * **Operating System:**
     * Windows: Aiming for support of actively supported versions (specific versions to be determined).
-    * Linux: Aiming for compatibility with recent stable releases of popular distributions (e.g., Ubuntu, Fedora, Debian). Specific versions to be determined.
-    * macOS: Support via the JAR file (requires a compatible JVM). Native macOS support is planned for the future.
-* **RAM:** Minimum of 2GB recommended (subject to change based on testing). 4GB or more is recommended for optimal performance.
+    * Linux and macOS: Support via the JAR file (requires a compatible JVM). Native Linux & macOS support is planned for the future.
+* **RAM:** Minimum of 2GB recommended (subject to change based on further development). 4GB or more is recommended for optimal performance.
 * **Disk Space:** Approximately 100MB of free disk space for the vm buddy application (additional space will be required for virtual machines and ISO images).
 * **Java:** Java 24 or a compatible JVM is required to run the JAR file.
 
@@ -52,7 +51,7 @@ You can get vm buddy through the following methods:
 1.  **Launching vm buddy:** After installation, launch the vm buddy application.
 2.  **Mode Selection:** On the initial screen, you'll see cards for "Basic Mode" and "Developer Mode." Click the "Proceed" button under "Basic Mode."
 3.  **Homepage:** You will be taken to the homepage where you can begin creating a virtual machine.
-4.  **Adding a Virtual Machine:** Click the "Add Virtual Machine" button (or similar). This will guide you through the process of:
+4.  **Adding a Virtual Machine:** Click the "Add Virtual Machine" button. This will guide you through the process of:
     * Selecting your preferred virtualizer (VirtualBox, QEMU, or VMware).
     * Choosing an operating system (macOS, Linux, or Windows). You may be prompted to download the ISO image if it's not already available.
     * Configuring basic settings for your virtual machine.
@@ -62,7 +61,7 @@ You can get vm buddy through the following methods:
 
 1.  **Launching vm buddy:** After installation, launch the vm buddy application.
 2.  **Mode Selection:** On the initial screen, click the "Proceed" button under "Developer Mode."
-3.  **Account Creation (for Remote Management):** You will be prompted to create an account. This is primarily for enabling remote management features.
+3.  **Account Creation (for Remote Management):** You will be prompted to create an account. This is primarily for enabling remote management, cloud image, qimage repos features etc.
 4.  **Homepage:** After account creation (or login), you will be taken to the developer mode homepage.
 5.  **Accessing Features:** All developer mode features are accessible through a menu bar at the top of the application.
 6.  **Creating a Virtual Machine (Template or Manual):**
@@ -89,7 +88,7 @@ vm buddy is built using the following key technologies:
 * **Scripting Languages (Developer Mode):**
     * **FXML:** Can be used within scripts for defining user interface elements or extensions.
     * **JSON:** For data serialization and configuration within scripts.
-    * **JavaScript:** The primary scripting language supported in Developer Mode, requiring relevant JavaScript engine libraries within the Java environment (specific library to be determined).
+    * **JavaScript:** The primary scripting language supported in Developer Mode.
 
 ## Contributions
 
