@@ -11,11 +11,12 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load the FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/basic_mode/pages/ui/home_page.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/basic_mode/pages/ui/installer.fxml"));
         Parent root = loader.load();
 
         // Set up the stage and scene
-        primaryStage.setTitle("VM Buddy Installer");
+        primaryStage.setTitle("VM Buddy");
+        primaryStage.getIcons().add(new javafx.scene.image.Image(getClass().getResourceAsStream("/basic_mode/assets/icons/ico_favicon.png")));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }

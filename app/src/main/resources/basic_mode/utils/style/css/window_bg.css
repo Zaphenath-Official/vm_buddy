@@ -1,0 +1,17 @@
+/* Style for the outer rounded pane */
+#outter_pane {
+    -fx-background-color: DarkSlateGrey; /* Background color */
+    background-color: DarkSlateGrey; /* Standard property for compatibility */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 0, 4); /* Optional shadow */
+    box-shadow: 0px, 4px, 10px, rgba(0, 0, 0, 0.5); /* Standard property for compatibility */
+    -fx-padding: 10; /* Optional padding */
+    padding: 10px; /* Standard property for compatibility */
+}
+
+/* Style for the inner blur pane */
+#blur_pane {
+    -fx-background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent white */
+    background-color: rgba(0, 0, 0, 0.3); /* Standard property for compatibility */
+    -fx-padding: 10; /* Add padding to prevent content overflow */
+    padding: 10px; /* Standard property for compatibility */
+}
