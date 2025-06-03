@@ -1,37 +1,41 @@
-# vm buddy
+# VM Buddy
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/Zaphenath-Official/vm_buddy/blob/main/CONTRIBUTING.md) vm buddy is a tool designed to simplify the process of creating and managing virtual machines. It supports several popular virtualization platforms and operating systems.
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)] -  (https://opensource.org/licenses/MIT)
+
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)]
+(https://github.com/Zaphenath-Official/vm_buddy/blob/main/CONTRIBUTING.md)
+
+VM Buddy is a virtualization management tool designed to simplify the process of creating and managing virtual machines. For now it's available for *Windows* OS only and supports virtualization platforms like *VirtualBox*, *AWS* cloud virtual machines,*OSBoxes* image repositories and *Linux/Unix* ISO images.
 
 ## Features
+* **Local Virtual Machine Management:** Manage Virtual machines that you've already manually setup in your local machine
+* **Cloud Virtual Machine Management:** Create, access and manage your cloud virtual machines on AWS and work on them offline.
+* **Online Image Repositories:** Have access to latest VM images already created for you thru automated download and setup.
+* **Virtual Machine templates:** VM Buddy has pre-configured VM templates ready to be used.
 
 ### Basic Mode
 
-* **Automated Virtualizer Installation:** Easily download and install your choice of VirtualBox, QEMU, or VMware.
-* **Simplified ISO Downloading:** Fetch ISO images for macOS, Linux, and Windows directly through the application.
+* **Automated Virtualizer Installation:** Easily download and install your choice of VirtualBox.
+* **Simplified ISO Downloading:** Fetch ISO images for Linux, directly through the application.
 * **Virtual Machine Configuration:** Set up basic configurations for your virtual machines.
-
-### Developer Mode
-
-* **Includes all Basic Mode features.**
+* **Includes all basic virtual machine features.** I.E create,delete,start,pause resume,stop a VM,file transfer, add peripheral devvices,Event notification and create snapshots.
 * **Cloud Image Support:** Utilize cloud-based virtual machine images for flexible deployments.
 * **Pre-configured VM Templates:** Quickly create VMs using ready-to-use templates.
 * **Image Repository Integration:** Seamlessly integrate with image repositories for easy access to VM images.
-* **Scripting Language Support:** Automate VM management tasks using FXML, JSON, and JavaScript.
-* **Snapshot Management:** Create, revert, and manage VM snapshots.
-* **Remote Management:** Access and control your virtual machines remotely.
-* **Comprehensive Logging and Monitoring:** Gain insights into VM performance and resource usage.
-* **Command-Line Interface (CLI):** Interact with vm buddy through a powerful command-line interface.
 
 ## Getting Started
+* *Download and install VM Buddy*
+* *You'll be directed to SignIn or create an account on AWS if you don't have one*
+* *Choose the operation mode you want to work under (basic mode or developer mode)*
+* *After chooing the operation mode you'll be redirected to the home screen where you can access all VM Buddy features under that mode.*
 
 ### Installation
 
-You can get vm buddy through the following methods:
+You can get VM Buddy through the following methods:
 
 * **GitHub Repository:** Clone the repository from [https://github.com/Zaphenath-Official/vm\_buddy](https://github.com/Zaphenath-Official/vm\_buddy).
-* **Website (Coming Soon):** Executable files for Linux and Windows will be available for download on the upcoming vm buddy website.
-* **JAR File:** A JAR file will be provided for users with a compatible Java Virtual Machine (JVM) installed, making it potentially compatible with macOS and other systems.
+* **Website (Coming Soon):** Executable files for *Windows* will be available for download on the upcoming vm buddy website.
+* **JAR File:** A JAR file will be provided for users with a compatible *Java Virtual Machine (JVM)* installed, making it potentially compatible with *Linux* and  *macOS* and other systems.
 
 ### System Requirements (Preliminary)
 
@@ -45,35 +49,24 @@ You can get vm buddy through the following methods:
 **Further details on supported operating system versions and system requirements will be provided as development progresses.**
 
 ## Usage
+* *VM Buddy offers a unified and centralised hub, automated and user-friendly experience for virtualization management*
 
 ### Basic Mode
 
 1.  **Launching vm buddy:** After installation, launch the vm buddy application.
-2.  **Mode Selection:** On the initial screen, you'll see cards for "Basic Mode" and "Developer Mode." Click the "Proceed" button under "Basic Mode."
-3.  **Homepage:** You will be taken to the homepage where you can begin creating a virtual machine.
-4.  **Adding a Virtual Machine:** Click the "Add Virtual Machine" button. This will guide you through the process of:
-    * Selecting your preferred virtualizer (VirtualBox, QEMU, or VMware).
-    * Choosing an operating system (macOS, Linux, or Windows). You may be prompted to download the ISO image if it's not already available.
-    * Configuring basic settings for your virtual machine.
-5.  **Starting the Virtual Machine:** Once configured, you should be able to start your newly created virtual machine from the homepage.
-
-### Developer Mode
-
-1.  **Launching vm buddy:** After installation, launch the vm buddy application.
-2.  **Mode Selection:** On the initial screen, click the "Proceed" button under "Developer Mode."
-3.  **Account Creation (for Remote Management):** You will be prompted to create an account. This is primarily for enabling remote management, cloud image, qimage repos features etc.
-4.  **Homepage:** After account creation (or login), you will be taken to the developer mode homepage.
-5.  **Accessing Features:** All developer mode features are accessible through a menu bar at the top of the application.
+2.  **Account Creation (AWS):** You will be prompted to create an account. This is primarily for enabling cloud image, image repos features etc.
+3.  **Copy your access id, region and access token on AWs:** When on AWS cloud platform create a IMA user and copy your user id, access token and region.These will be used to manage VMs on AWS. Then go back to VM Buddy
+2.  **Mode Selection:** On the initial screen, click the "Proceed" button under "Basic Mode."
+4.  **Homepage:** After account creation (or login), you will be taken to the homepage.
+5.  **Accessing Features:** All features are accessible through a dashboard on the left of the application.
 6.  **Creating a Virtual Machine (Template or Manual):**
-    * The "Add Virtual Machine" feature is prominently displayed, allowing you to create a VM with custom settings (similar to basic mode).
-    * The "Templates" feature is also readily accessible, allowing you to select and deploy a pre-configured virtual machine template.
-7.  **Utilizing Developer Features (Example: Taking a Snapshot):**
-    * Select a running virtual machine from the homepage or a VM management list.
-    * Navigate to the "Snapshot Management" option in the menu bar.
+    * The "Add Virtual Machine" feature is prominently displayed on the activity bar on the right, allowing you to create a VM with custom settings.
+    * The "Templates" feature is also readily accessible on the activity bar, allowing you to select and deploy a pre-configured virtual machine template.
+    * For cloud VMs and Image repositories access them through the dashboard and you can select your choice.
+7.  **Utilizing Basic Features (Example: Taking a Snapshot):**
+    * Select a running virtual machine from the homepage througn the checkbox.
+    * Navigate to the "Snapshot Management" option in the dashboard.
     * Click "Take Snapshot" and provide a name for the snapshot.
-8.  **Utilizing Developer Features (Example: Using the CLI):**
-    * Open your terminal or command prompt.
-    * Use the `vmbuddy` command followed by the desired action (e.g., `vmbuddy list vms`, `vmbuddy snapshot create myvm`). (Note: The exact CLI commands will need to be documented in more detail later).
 
 ## Technologies Used
 
@@ -82,13 +75,9 @@ vm buddy is built using the following key technologies:
 * **Java 24:** The primary programming language.
 * **JavaFX 24:** For creating the user interface, with FXML used for defining the UI structure and layout.
 * **Gradle:** As the build automation tool and dependency management system.
-* **Virtualizer APIs:** Libraries specific to interacting with each supported virtualization platform (VirtualBox, QEMU, VMware).
-* **Java Download and Install Classes/Functions:** Custom-built or standard Java libraries for handling file downloads and software installations.
-* **Google API:** Utilized for providing cloud image support.
-* **Scripting Languages (Developer Mode):**
-    * **FXML:** Can be used within scripts for defining user interface elements or extensions.
-    * **JSON:** For data serialization and configuration within scripts.
-    * **JavaScript:** The primary scripting language supported in Developer Mode.
+* **VirtualBox SDK APIs:** Libraries specific to interacting with VirtualBox.
+* **AWs API:** Utilized for providing cloud image support.
+* **SQLite DB:** Utilized for storing ddata e.g user preferences,file location paths, user account details.
 
 ## Contributions
 
@@ -98,8 +87,9 @@ Contributions to vm buddy are highly welcomed and appreciated! We encourage the 
 
 If you encounter any issues with vm buddy or have ideas for new features, please reach out through one of the following channels:
 
-* **Discord:** [VM Buddy Discord Server](https://discord.gg/nJGGmvR7)
+* **Discord:** [VM Buddy Discord Server](https://discord.gg/myzJewcu)
 * **GitHub Issues:** [vm\_buddy Issues](https://github.com/Zaphenath-Official/vm\_buddy/issues)
+* **WhatsApp:** [VM Buddy WhatsApp Channel](https://whatsapp.com/channel/0029VbA8uQnGJP8ACG3YyX1v)
 
 ### Contributing Code
 
@@ -120,15 +110,6 @@ To contribute code to vm buddy, please follow this process:
 
 Project maintainers will review your pull request. This may involve feedback and requests for changes. Once the contribution is approved and tested, it will be merged into the main branch.
 
-### Areas Welcoming Contributions
-
-We particularly welcome contributions in the following areas:
-
-* **User Interface (UI):** Enhancements to the look and feel of the application.
-* **Better Image Repository Sites:** Integration with more online image repositories for easier OS selection.
-* **Remote Management:** Improvements and расширения to the remote management capabilities.
-* **User Experience (UX):** Suggestions and implementations that improve the overall user experience.
-
 Thank you for your interest in contributing to vm buddy!
 
 ## License
@@ -139,6 +120,6 @@ This project is licensed under the [MIT License](LICENSE). See the `LICENSE` fil
 
 **Regarding Commercial Use of Derivative Works:**
 
-While the MIT license grants broad permissions, including the right to create and distribute modified versions of this software, the author kindly requests that any significantly modified software based on "vm buddy" not be commercially sold. The intent is to encourage the open and free use of derivative works within the community, while reserving potential commercialization rights for the original "vm buddy" project. We appreciate your understanding and respect for this intention.
+While the MIT license grants broad permissions, including the right to create and distribute modified versions of this software, we kindly requests that any significantly modified software based on "vm buddy" not be commercially sold. The intent is to encourage the open and free use of derivative works within the community. We appreciate your understanding and respect for this intention.
 
 ---
