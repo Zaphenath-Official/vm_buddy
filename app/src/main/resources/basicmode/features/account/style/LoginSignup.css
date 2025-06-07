@@ -1,0 +1,153 @@
+/* Background for the root pane */
+#bg_pane {
+    -fx-background-color: #022828;
+    background-color: #022828;
+}
+
+#welcomeText {
+    -fx-font-family: 'Cookie'; 
+    font-family: 'Cookie'; 
+    -fx-font-size: 72px; 
+    font-size: 72px;
+    -fx-text-fill: white;
+}
+
+/*glassmorphism effect on the form*/
+#glassCard {
+    /* Glassmorphism background */
+    -fx-background-color: rgba(255, 255, 255, 0.18); /* semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.18);
+
+    /* Border for glass effect */
+    -fx-border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255,255,255,0.4);
+    -fx-border-width: 1.5;
+    border-width: 1.5px;
+    -fx-border-radius: 25;
+    border-radius: 25px;
+
+    /* Rounded corners */
+    -fx-background-radius: 25;
+
+    /* Optional: subtle box shadow (JavaFX only supports drop shadow via effect property in code) */
+    /* For a shadow in CSS, you can use: */
+    box-shadow: 0, 8px, 32px, 0, rgba(31, 38, 135, 0.37);
+}
+#loaderPane {
+    -fx-background-color: rgba(13, 12, 12, 0.9); /* semi-transparent black */
+    background-color: rgba(13, 12, 12, 0.7);
+    -fx-background-radius: 25; /* Rounded corners */
+}
+
+/* Auth fields (TextFields) */
+.auth-field {
+    -fx-font-family: 'Funnel Display'; 
+    font-family: 'Funnel Display';
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-border-color: grey;
+    border-color: grey;
+    -fx-border-radius: 15;
+    border-radius: 15px;
+    -fx-border-width: 3;
+    border-width: 3px;
+    -fx-text-fill: white;
+    color: white;
+    -fx-prompt-text-fill: #cccccc;
+    font-size: 18px;
+    -fx-font-size: 18px;
+}
+.auth-field:focused {
+    -fx-border-color: yellow;
+    border-color: yellow;
+}
+.error-border {
+    -fx-border-color: rgb(182, 7, 7) !important;
+    border-color: rgb(182, 7, 7) !important;
+}
+#error_message {
+    -fx-text-fill: red !important;
+    color: red !important;
+}#error_message1 {
+    -fx-text-fill: red !important;
+    color: red !important;
+}
+
+/* Auth buttons */
+.auth-btn {
+    -fx-font-family: 'Aubrey'; 
+    font-family: 'Aubrey';
+    -fx-background-radius: 17;
+    -fx-background-color: black;
+    background-color: black;
+    -fx-border-width: 1;
+    border-width: 1px;
+    -fx-border-color: yellow;
+    border-color: yellow;
+    -fx-border-radius: 15;
+    border-radius: 15px;
+    -fx-text-fill: white;
+    color: white;
+    -fx-font-size: 24px;
+    font-size: 24px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-cursor: hand;
+    cursor: pointer;
+}
+
+/* Info and link labels */
+.info-label {
+    -fx-font-family: 'Zen Loop Bold'; 
+    font-family: 'Zen Loop Bold';
+    -fx-text-fill: white;
+    color: white;
+    -fx-font-size: 14;
+    font-size: 14px;
+}
+.link-label {
+    -fx-font-family: 'Aubrey'; 
+    font-family: 'Aubrey';
+    -fx-text-fill: #95d8eb;
+    color: #95d8eb;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-cursor: hand;
+    cursor: pointer;
+}
+
+/* Or-label */
+.or-label {
+    -fx-font-family: 'Zen Loop Bold'; 
+    font-family: 'Zen Loop Bold';
+    -fx-text-fill: white;
+    color: white;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+/* Social account image panes */
+.accountImagePane {
+    -fx-border-radius: 15;
+    border-radius: 15px;
+    -fx-border-color: grey;
+    border-color: grey;
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+/* Remove focus ring for buttons (optional) */
+.auth-btn:focused {
+    -fx-effect: none;
+    outline: none;
+}
+
+#copyrightBar {
+    -fx-text-fill: white;
+    color: white;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-alignment: center;
+    -fx-background-color: #001414;
+    background-color: #001414;
+}

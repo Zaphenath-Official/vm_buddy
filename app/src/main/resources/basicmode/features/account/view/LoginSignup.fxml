@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="bg_pane" prefHeight="750.0" prefWidth="1366.0" stylesheets="/basicmode/features/account/style/LoginSignup.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vm.buddy.basicmode.features.account.controller.LoginSignupController">
+   <children>
+      <Label fx:id="welcomeText" layoutX="412.0" layoutY="14.0" text="Welcome to VM Buddy!">
+         <font>
+            <Font size="72.0" />
+         </font>
+      </Label>
+      <Group layoutX="428.0" layoutY="179.0">
+         <children>
+            <StackPane fx:id="cardFlipperContainer">
+               <children>
+                  <Pane fx:id="glassCard" maxHeight="450.0" maxWidth="400.0" prefHeight="450.0" prefWidth="400.0" StackPane.alignment="CENTER" />
+                  <VBox fx:id="signup_card" maxHeight="450.0" maxWidth="300.0" prefHeight="450.0" prefWidth="300.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/images/img_apple.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="125.0" right="125.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <TextField fx:id="signupFullName" maxHeight="40.0" maxWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Full Name" styleClass="auth-field">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="signupPassword" maxHeight="40.0" maxWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Password" styleClass="auth-field">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="signupConfirmPassword" maxHeight="40.0" maxWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Confirm Password" styleClass="auth-field">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="error_message">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="signupBtn" mnemonicParsing="false" onAction="#onSignupClicked" prefHeight="40.0" prefWidth="200.0" styleClass="auth-btn" text="SignUp">
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <HBox maxHeight="40.0" maxWidth="300.0">
+                           <children>
+                              <Separator maxWidth="50.0" prefHeight="5.0" prefWidth="50.0">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="45.0" top="20.0" />
+                                 </HBox.margin>
+                              </Separator>
+                              <Label alignment="CENTER" prefWidth="100.0" styleClass="or-label" text="Or signup with">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" top="12.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Separator maxWidth="50.0" prefHeight="5.0" prefWidth="50.0">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" right="45.0" top="20.0" />
+                                 </HBox.margin>
+                              </Separator>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox maxHeight="40.0" maxWidth="300.0">
+                           <children>
+                              <Pane maxHeight="40.0" maxWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_google.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Pane maxHeight="40.0" maxWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_apple.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <Pane maxHeight="40.0" maxWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_github.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets left="85.0" right="85.0" />
+                           </padding>
+                        </HBox>
+                        <HBox maxHeight="40.0" maxWidth="300.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" maxWidth="217.0" prefHeight="17.0" prefWidth="193.0" styleClass="info-label" text="Already have an account?">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="loginTriggerLabel" maxWidth="50.0" onMouseClicked="#flipToLogin" prefHeight="18.0" prefWidth="50.0" styleClass="link-label" text="Login">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="login_card" maxHeight="450.0" maxWidth="300.0" prefHeight="450.0" prefWidth="300.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/images/img_apple.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="125.0" right="125.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <TextField fx:id="loginUsername" maxHeight="40.0" maxWidth="300.0" promptText="Username" styleClass="auth-field">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="loginPassword" maxHeight="40.0" maxWidth="300.0" promptText="Password" styleClass="auth-field">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="error_message1" />
+                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginClicked" prefHeight="40.0" prefWidth="200.0" styleClass="auth-btn" text="Login">
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <HBox maxWidth="300.0">
+                           <children>
+                              <Separator prefHeight="5.0" prefWidth="50.0">
+                                 <HBox.margin>
+                                    <Insets left="60.0" top="10.0" />
+                                 </HBox.margin>
+                              </Separator>
+                              <Label alignment="CENTER" styleClass="or-label" text="Or Login with">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" top="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Separator prefHeight="5.0" prefWidth="50.0">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Separator>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox maxHeight="40.0" maxWidth="300.0">
+                           <children>
+                              <Pane prefHeight="40.0" prefWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_google.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="40.0" prefWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_apple.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <Pane prefHeight="40.0" prefWidth="40.0" styleClass="accountImagePane">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/images/img_github.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="85.0" right="85.0" />
+                           </padding>
+                        </HBox>
+                        <HBox maxHeight="40.0" maxWidth="300.0">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="200.0" prefHeight="17.0" prefWidth="166.0" styleClass="info-label" text="Don't have an account?">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="signupTriggerLabel" alignment="CENTER" layoutX="170.0" layoutY="3.0" maxWidth="50.0" onMouseClicked="#flipToSignup" styleClass="link-label" text="SignUp">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Group>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="50.0" right="50.0" />
+               </padding>
+            </StackPane>
+            <Pane fx:id="loaderPane" layoutX="50.0" prefHeight="450.0" prefWidth="400.0" visible="false">
+               <children>
+                  <ImageView fx:id="loader_icon" fitHeight="150.0" fitWidth="200.0" layoutX="128.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/iconanimated/loader.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Group>
+      <Pane fx:id="copyrightBar" layoutX="-25.0" layoutY="713.0" prefHeight="40.0" prefWidth="1392.0">
+         <children>
+            <Label fx:id="copyright_label" layoutX="666.0" layoutY="8.0" text="Copyright © 2025" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="website_label" layoutX="1207.0" layoutY="8.0" text="vmbuddy.com" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </children>
+</Pane>
