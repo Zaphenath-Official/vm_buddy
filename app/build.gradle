@@ -26,6 +26,10 @@ dependencies {
 
     // Add jfoenix dependency for JavaFX Material Design components.
     implementation 'com.jfoenix:jfoenix:9.0.10'
+
+    //add AWS SDK
+    implementation 'software.amazon.awssdk:ec2:2.25.10'
+    implementation 'software.amazon.awssdk:s3:2.25.10'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

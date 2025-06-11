@@ -4,7 +4,8 @@ package vm.buddy;
 // //import vm.buddy.basicmode.features.virtualizer.service.VirtualBox;
 // import vm.buddy.basicmode.features.iso_image.api.LinuxDownload;
 // import vm.buddy.basicmode.features.iso_image.service.Linux;
-import vm.buddy.basicmode.features.virtualizer.service.VirtualBox;
+// import vm.buddy.basicmode.features.local_vm.service.LocalMachine;
+
 
 
 
@@ -63,13 +64,13 @@ public class App {
         //     System.err.println("Failed to start VM: " + e.getMessage());
         // }
 
-        String vmName = "vm buddy test vm";
-        try {
-            // Stop the VM gracefully (ACPI shutdown)
-            VirtualBox.runVBoxManage("controlvm", vmName, "poweroff");
-            System.out.println("Powered off VM: " + vmName);
-        } catch (Exception e) {
-            System.err.println("Failed to stop VM: " + e.getMessage());
-        }
+        // String vmName = "vm buddy test vm";
+        // try {
+        //     // Stop the VM gracefully (ACPI shutdown)
+        //     LocalMachine.stopVM(vmName);
+        //     System.out.println("Powered off VM: " + vmName);
+        // } catch (Exception e) {
+        //     System.err.println("Failed to stop VM: " + e.getMessage());
+        // }
     }
 }
