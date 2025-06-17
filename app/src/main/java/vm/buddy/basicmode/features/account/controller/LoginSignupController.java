@@ -111,29 +111,37 @@ public class LoginSignupController implements Initializable {
 
     //validate whether all textfields hve values
     private boolean validateFields(List<TextField> fields, Button button) {
-        boolean hasError = false;
-        // Remove error styles
-        fields.forEach(f -> f.getStyleClass().remove("error-border"));
-        button.getStyleClass().remove("error-border");
-        error_message.setVisible(false);
+    boolean hasError = false;
+    // Remove error styles
+    fields.forEach(f -> f.getStyleClass().remove("error-border"));
+    button.getStyleClass().remove("error-border");
+    // Only clear the error message for the visible card
+    if (isLoginVisible) {
         error_message1.setVisible(false);
-
-        // Check for empty fields
-        for (TextField field : fields) {
-            if (field.getText() == null || field.getText().trim().isEmpty()) {
-                field.getStyleClass().add("error-border");
-                error_message.setVisible(true);
-                error_message.setText("Fill all fields");
-                error_message1.setVisible(true);
-                error_message1.setText("Fill all fields");
-                hasError = true;
-            }
-        }
-        if (hasError) {
-            button.getStyleClass().add("error-border");
-        }
-        return !hasError;
+    } else {
+        error_message.setVisible(false);
     }
+
+    // Check for empty fields
+    for (TextField field : fields) {
+        if (field.getText() == null || field.getText().trim().isEmpty()) {
+            field.getStyleClass().add("error-border");
+            hasError = true;
+        }
+    }
+    if (hasError) {
+        button.getStyleClass().add("error-border");
+        // Only show the error message for the visible card
+        if (isLoginVisible) {
+            error_message1.setVisible(true);
+            error_message1.setText("Fill all fields");
+        } else {
+            error_message.setVisible(true);
+            error_message.setText("Fill all fields");
+        }
+    }
+    return !hasError;
+}
 
     private void clearFields(List<TextField> fields) {
         fields.forEach(TextField::clear);

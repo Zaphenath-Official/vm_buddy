@@ -1,0 +1,63 @@
+.searchfield {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-prompt-text-fill: grey;
+    -fx-text-fill: white;
+    color: white;
+}
+
+.vmTab {
+    -fx-border-color: grey grey transparent grey;
+    border-color: grey grey transparent grey;
+    -fx-border-width:  2px 2px 2px 2px;
+    border-width:  2px 2px 2px 2px;
+    -fx-border-radius: 25px 25 0px 0px;
+    border-radius: 25px 25 0px 0px;
+}
+
+#card_tile {
+    -fx-border-color: grey grey grey grey;
+    border-color: grey grey grey grey;
+    -fx-border-width: 2px 2px 2px 2px;
+    border-width:  2px 2px 2px 2px;
+    -fx-border-radius: 0px 0px 25px 25px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.glassCard {
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.1);
+
+    -fx-border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255,255,255,0.4);
+    -fx-border-width: 1.5;
+    border-width: 1.5px;
+    -fx-border-radius: 25;
+    border-radius: 25px;
+
+    -fx-background-radius: 25;
+
+    /* Optional: subtle box shadow*/
+    box-shadow: 0, 8px, 32px, 0, rgba(31, 38, 135, 0.37);
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-opacity: 0;
+    opacity: 0;
+    -fx-max-width: 0;
+    max-width: 0;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    opacity: 0;
+    -fx-max-width: 0;
+    max-width: 0;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-border-color: transparent;
+    border-color: transparent;
+}

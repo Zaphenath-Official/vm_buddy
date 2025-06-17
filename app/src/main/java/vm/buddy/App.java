@@ -1,4 +1,9 @@
 package vm.buddy;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 //import vm.buddy.basicmode.features.virtualizer.api.VirtualboxDownload;
 // //import vm.buddy.basicmode.features.virtualizer.service.VirtualBox;
@@ -9,7 +14,17 @@ package vm.buddy;
 
 
 
-public class App {
+public class App extends Application{
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(
+            "/basicmode/pages/view/HomePage.fxml"
+        ));
+        primaryStage.setTitle("VM Buddy");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
     //    // String vboxUrl = "https://download.virtualbox.org/virtualbox/7.0.18/VirtualBox-7.0.18-162988-Win.exe";
@@ -72,5 +87,7 @@ public class App {
         // } catch (Exception e) {
         //     System.err.println("Failed to stop VM: " + e.getMessage());
         // }
+
+        launch(args);
     }
 }
