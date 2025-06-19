@@ -3,13 +3,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-//import vm.buddy.basicmode.features.virtualizer.api.VirtualboxDownload;
-// //import vm.buddy.basicmode.features.virtualizer.service.VirtualBox;
-// import vm.buddy.basicmode.features.iso_image.api.LinuxDownload;
-// import vm.buddy.basicmode.features.iso_image.service.Linux;
-// import vm.buddy.basicmode.features.local_vm.service.LocalMachine;
+import vm.buddy.basicmode.features.local_vm.controller.AddNewVMController;
+import vm.buddy.basicmode.features.local_vm.controller.HomePageController;
 
 
 
@@ -18,76 +16,59 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(
-            "/basicmode/pages/view/HomePage.fxml"
-        ));
+        // Load HomePage.fxml
+        FXMLLoader homePageLoader = new FXMLLoader(getClass().getResource("/basicmode/pages/view/HomePage.fxml"));
+        Parent homePageRoot = homePageLoader.load();
+        HomePageController homePageController = homePageLoader.getController();
+
+        // Load and add all major screens to HomePage AnchorPane
+        String[] screenFiles = {
+            "AddNewVM.fxml", "MyVMs.fxml", "CloudVM.fxml", "ImageRepo.fxml", "Logs.fxml", "Snapshots.fxml", "Templates.fxml"
+        };
+        for (String fxml : screenFiles) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/basicmode/pages/view/" + fxml));
+            Parent screenRoot = loader.load();
+            ((javafx.scene.layout.AnchorPane) homePageRoot).getChildren().add(screenRoot);
+            switch (fxml) {
+                case "AddNewVM.fxml":
+                    homePageController.addNewVMController = (AnchorPane) screenRoot;
+                    AddNewVMController addNewVMController = loader.getController();
+                    addNewVMController.setHomePageController(homePageController);
+                    break;
+                case "MyVMs.fxml":
+                    homePageController.home_screen = (AnchorPane) screenRoot;
+                    break;    
+                case "CloudVM.fxml":
+                    homePageController.cloudVM_screen = (Pane) screenRoot;
+                    break;
+                case "ImageRepo.fxml":
+                    homePageController.virtual_machine_images_screen = (AnchorPane) screenRoot;
+                    break;
+                case "Logs.fxml":
+                    homePageController.logs_screen = (AnchorPane) screenRoot;
+                    break;
+                case "Snapshots.fxml":
+                    homePageController.snapshots_screen = (AnchorPane) screenRoot;
+                    break;
+                case "Templates.fxml":
+                    homePageController.template_screen = (AnchorPane) screenRoot;
+                    break;
+            }
+        }
+
+        // After adding all screens and wiring controller fields
+        // Hide all screens except home_screen
+        homePageController.setAllScreensInvisible();
+        if (homePageController.home_screen != null) homePageController.home_screen.setVisible(true);
+        homePageController.resetDashboardColors();
+        if (homePageController.dashboard1HomeHBox != null) homePageController.dashboard1HomeHBox.setStyle("-fx-background-color: orange; -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;");
+
         primaryStage.setTitle("VM Buddy");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(new Scene(homePageRoot));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-    //    // String vboxUrl = "https://download.virtualbox.org/virtualbox/7.0.18/VirtualBox-7.0.18-162988-Win.exe";
-    //     String fileName = "VirtualBox-7.0.18-162988-Win.exe";
-    //     try {
-    //         // Download the installer
-    //        // VirtualboxDownload.downloadVirtualBox(vboxUrl, fileName);
-
-    //         // Build the full path to the downloaded installer in the Downloads directory
-    //         String userHome = System.getProperty("user.home");
-    //         String installerPath = userHome + "\\Downloads\\" + fileName;
-
-    //         // Install VirtualBox silently
-    //         VirtualBox.installVirtualBoxSilently(installerPath);
-
-    //     } catch (Exception e) {
-    //         System.err.println("Download or installation failed: " + e.getMessage());
-    //     }
-
-        // String isoUrl = "https://sourceforge.net/projects/linux-lite/files/latest/download";
-        // String fileName = "linux-lite-latest-version-64bit.iso";
-        // String vmName = "vm buddy test vm";
-
-        // try {
-        //     // Notify when download starts
-        //     System.out.println("Starting download of Linux ISO: " + fileName);
-            
-        //     // 1. Download the ISO
-        //     LinuxDownload.downloadLinuxIso(isoUrl, fileName);
-
-        //     // 2. Get the ISO path
-        //     String isoPath = Linux.getIsoPathInDownloads(fileName);
-        //     System.out.println("ISO path: " + isoPath);
-
-        //     // 3. Create the VM and attach the ISO
-        //     VirtualBox.runVBoxManage("createvm", "--name", vmName, "--register");
-        //     VirtualBox.runVBoxManage("modifyvm", vmName, "--memory", "2048", "--acpi", "on", "--boot1", "dvd");
-        //     VirtualBox.runVBoxManage("storagectl", vmName, "--name", "SATA Controller", "--add", "sata", "--controller", "IntelAHCI");
-        //     VirtualBox.runVBoxManage("storageattach", vmName, "--storagectl", "SATA Controller", "--port", "0", "--device", "0", "--type", "dvddrive", "--medium", isoPath);
-
-        //     System.out.println("VM '" + vmName + "' created and ISO attached.");
-        // } catch (Exception e) {
-        //     System.err.println("Operation failed: " + e.getMessage());
-        // }
-
-        // String vmName = "vm buddy test vm";
-        // try {
-        //     // Start the VM in GUI mode
-        //     VirtualBox.runVBoxManage("startvm", vmName, "--type", "gui");
-        //     System.out.println("Started VM: " + vmName + " (Path: C:\\Users\\panea\\VirtualBox VMs\\" + vmName + ")");
-        // } catch (Exception e) {
-        //     System.err.println("Failed to start VM: " + e.getMessage());
-        // }
-
-        // String vmName = "vm buddy test vm";
-        // try {
-        //     // Stop the VM gracefully (ACPI shutdown)
-        //     LocalMachine.stopVM(vmName);
-        //     System.out.println("Powered off VM: " + vmName);
-        // } catch (Exception e) {
-        //     System.err.println("Failed to stop VM: " + e.getMessage());
-        // }
-
         launch(args);
     }
 }

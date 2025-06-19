@@ -20,7 +20,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.RadioButton?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="home_screen" layoutX="100.0" layoutY="148.0" prefHeight="556.0" prefWidth="598.0" visible="true">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="home_screen" layoutX="100.0" layoutY="148.0" prefHeight="556.0" prefWidth="598.0">
          <children>
             <Group layoutX="266.0" layoutY="462.0">
                <children>
@@ -327,7 +327,7 @@
                   </HBox>
                </content>
             </ScrollPane>
-            <Button layoutX="454.0" layoutY="510.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="ADD NEW VM">
+            <Button fx:id="addNewVMButton" layoutX="454.0" layoutY="510.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="ADD NEW VM">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

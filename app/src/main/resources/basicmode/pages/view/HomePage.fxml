@@ -17,13 +17,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1366.0" style="-fx-background-color: #022828;" stylesheets="@../style/HomePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1366.0" style="-fx-background-color: #022828;" stylesheets="@../style/HomePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vm.buddy.basicmode.features.local_vm.controller.HomePageController">
    <children>
       <AnchorPane fx:id="dashboard" layoutX="20.0" layoutY="150.0" prefHeight="260.0" prefWidth="60.0" style="-fx-background-color: #011414; -fx-background-radius: 100; -fx-border-radius: 100;">
          <children>
             <VBox alignment="TOP_CENTER" layoutX="14.0" prefHeight="244.0" prefWidth="32.0">
                <children>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboardCloudHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboardCloudClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,7 +41,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboardImageRepoHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboardImageRepoClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -59,7 +59,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboardTemplateHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboardTemplateClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -77,7 +77,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboardSnapshotHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboardSnapshotClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -95,7 +95,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboardLogHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboardLogClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -127,7 +127,7 @@
                   <Insets top="10.0" />
                </padding>
                <children>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboard1HomeHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboard1HomeClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -145,7 +145,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+                  <HBox fx:id="dashboard1LogoutHBox" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.18); -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboard1LogoutClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -163,10 +163,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" style="-fx-background-color: orange; -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
-                     <padding>
-                        <Insets bottom="5.0" left="2.5" top="5.0" />
-                     </padding>
+                  <HBox fx:id="dashboard1UserHBox" alignment="CENTER" style="-fx-background-color: orange; -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;" onMouseClicked="#onDashboard1UserClicked">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -177,6 +174,9 @@
                            </cursor>
                         </ImageView>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="2.5" top="5.0" />
+                     </padding>
                   </HBox>
                </children>
             </VBox>
@@ -201,7 +201,7 @@
             <Image url="@../../resources/images/3d-render-little-boy-with-laptop-tools.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="78.0" layoutY="708.0" prefHeight="33.0" prefWidth="618.0" style="-fx-background-color: #011414; -fx-background-radius: 10;">
+      <Pane fx:id="statusBar" layoutX="78.0" layoutY="708.0" prefHeight="33.0" prefWidth="618.0" style="-fx-background-color: #011414; -fx-background-radius: 10;">
          <children>
             <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="13.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -231,136 +231,12 @@
             </ImageView>
             <Label layoutX="269.0" layoutY="7.0" text="This is the status bar and will show the status of any VM." textFill="GREY" />
          </children></Pane>
-      <Pane layoutX="710.0" layoutY="711.0" prefHeight="42.0" prefWidth="658.0" style="-fx-background-color: #011414;">
+      <Pane fx:id="copyrightPane" layoutX="710.0" layoutY="711.0" prefHeight="42.0" prefWidth="658.0" style="-fx-background-color: #011414;">
          <children>
             <Label layoutX="289.0" layoutY="13.0" text="VMBuddy © 2025" textFill="WHITE" />
-            <Group visible="false">
-               <children>
-                  <Pane prefHeight="692.0" prefWidth="389.0" styleClass="glassCard">
-                     <children>
-                        <Pane disable="true" layoutX="29.0" layoutY="41.0" prefHeight="578.0" prefWidth="336.0" styleClass="glassCard">
-                           <children>
-                              <Button layoutX="105.0" layoutY="523.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Save Settings">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="127.0" layoutY="8.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="202.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Restore Default Settings">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <TextField layoutX="127.0" layoutY="75.0" prefHeight="39.0" prefWidth="195.0" promptText="2046 MB" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-width: 2; -fx-border-radius: 0 20 20 0;" styleClass="searchfield" />
-                              <TextField layoutX="126.0" layoutY="143.0" prefHeight="39.0" prefWidth="195.0" promptText="10000 MB" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-width: 2; -fx-border-radius: 0 20 20 0;" styleClass="searchfield" />
-                              <TextField layoutX="128.0" layoutY="210.0" prefHeight="39.0" prefWidth="195.0" promptText="2 Cores" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-width: 2; -fx-border-radius: 0 20 20 0;" styleClass="searchfield" />
-                              <TextField layoutX="126.0" layoutY="275.0" prefHeight="39.0" prefWidth="195.0" promptText="C:\USB_0001" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-width: 2; -fx-border-radius: 0 20 20 0;" styleClass="searchfield" />
-                              <Label layoutX="28.0" layoutY="336.0" prefHeight="46.0" prefWidth="253.0" text="Drag and Drop files/folders that you want to transfer to your Virtual Machine." textFill="WHITE" wrapText="true" />
-                              <Separator layoutX="18.0" layoutY="331.0" prefHeight="5.0" prefWidth="300.0" />
-                              <Pane layoutX="21.0" layoutY="384.0" prefHeight="130.0" prefWidth="293.0" styleClass="glassCard">
-                                 <children>
-                                    <Pane layoutX="73.0" layoutY="27.0" prefHeight="80.0" prefWidth="150.0" style="-fx-border-color: grey; -fx-border-width: 3; -fx-border-radius: 25; -fx-border-style: dotted;">
-                                       <children>
-                                          <Label layoutX="21.0" layoutY="23.0" prefHeight="40.0" prefWidth="107.0" text="Drag and Drop Here" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                                             <font>
-                                                <Font name="System Bold Italic" size="12.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="70.0" layoutY="86.0" text="RAM :" textFill="WHITE" />
-                              <Label layoutX="70.0" layoutY="153.0" text="HDD :" textFill="WHITE" />
-                              <Label layoutX="70.0" layoutY="219.0" text="CPU :" textFill="WHITE" />
-                              <Label layoutX="70.0" layoutY="286.0" text="USB :" textFill="WHITE" />
-                           </children>
-                        </Pane>
-                        <Label layoutX="119.0" layoutY="10.0" text="Configure VM Settings" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Pane layoutX="15.0" layoutY="633.0" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #011414; -fx-background-radius: 20 0 0 20;">
-                           <children>
-                              <Label layoutX="23.0" layoutY="15.0" text="ADD A LOCAL VM" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                        <Pane layoutX="169.0" layoutY="633.0" prefHeight="46.0" prefWidth="203.0" style="-fx-background-color: #011414; -fx-background-radius: 0 25 25 0;">
-                           <children>
-                              <TextField layoutX="3.0" layoutY="3.0" prefHeight="39.0" prefWidth="195.0" promptText="C:\VMBuddy|Local\VM" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-width: 2; -fx-border-radius: 0 20 20 0;" styleClass="searchfield">
-                                 <cursor>
-                                    <Cursor fx:constant="TEXT" />
-                                 </cursor>
-                              </TextField>
-                           </children>
-                        </Pane>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="407.0" layoutY="219.0" prefHeight="472.0" prefWidth="226.0" styleClass="glassCard">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="424.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #011414; -fx-background-radius: 10;">
-                           <children>
-                              <Label layoutX="64.0" layoutY="12.0" text="VMBuddy.com" textFill="WHITE" underline="true">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                        <Label layoutX="83.0" layoutY="23.0" text="HOW TO:" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="407.0" layoutY="6.0" prefHeight="200.0" prefWidth="226.0" style="-fx-background-color: #011414; -fx-background-radius: 25;">
-                     <children>
-                        <Label layoutX="71.0" layoutY="17.0" text="Downloads" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="15.0" layoutY="36.0" prefHeight="92.0" prefWidth="189.0" text="Linux ISO image version 24.0.1 has been fetched and  is underway" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-                        <ProgressBar layoutX="14.0" layoutY="131.0" prefHeight="10.0" prefWidth="200.0" progress="0.48" />
-                        <Label layoutX="13.0" layoutY="109.0" text="Downloading ..." textFill="WHITE" />
-                        <Label layoutX="188.0" layoutY="109.0" text="70%" textFill="WHITE" />
-                        <Button layoutX="162.0" layoutY="154.0" mnemonicParsing="false" style="-fx-text-fill: white;" styleClass="glassCard" text="Cancel">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Label layoutX="158.0" layoutY="19.0" text="1/2" textFill="WHITE" />
-                        <Label layoutX="200.0" layoutY="17.0" text="&gt;" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label layoutX="20.0" layoutY="17.0" text="&lt;" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-               </children>
-            </Group>
          </children></Pane>
       <Separator layoutX="707.0" orientation="VERTICAL" prefHeight="750.0" prefWidth="5.0" />
-      <Pane layoutX="195.0" prefHeight="50.0" prefWidth="340.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 0 0 40px 40px;">
+      <Pane fx:id="modePane" layoutX="195.0" prefHeight="50.0" prefWidth="340.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 0 0 40px 40px;">
          <children>
             <Label layoutX="151.0" layoutY="10.0" text="Basic Mode" textFill="WHITE">
                <font>
@@ -412,7 +288,7 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Pane layoutX="720.0" layoutY="12.0" prefHeight="690.0" prefWidth="410.0" styleClass="glassCard" visible="false">
+      <Pane fx:id="settingsPane" layoutX="720.0" layoutY="12.0" prefHeight="690.0" prefWidth="410.0" styleClass="glassCard" visible="false">
          <children>
             <Pane disable="true" layoutX="34.0" layoutY="50.0" prefHeight="590.0" prefWidth="350.0" styleClass="glassCard">
                <children>
@@ -459,7 +335,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="1136.0" layoutY="243.0" prefHeight="458.0" prefWidth="218.0" styleClass="glassCard" visible="false">
+      <Pane fx:id="howToPane" layoutX="1136.0" layoutY="243.0" prefHeight="458.0" prefWidth="218.0" styleClass="glassCard" visible="false">
          <children>
             <Label layoutX="81.0" layoutY="10.0" text="HOW TO" textFill="WHITE">
                <font>
@@ -473,7 +349,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="1136.0" layoutY="23.0" prefHeight="200.0" prefWidth="218.0" style="-fx-background-color: #011414; -fx-background-radius: 25;" visible="false">
+      <Pane fx:id="downloadsPane" layoutX="1136.0" layoutY="23.0" prefHeight="200.0" prefWidth="218.0" style="-fx-background-color: #011414; -fx-background-radius: 25;" visible="false">
          <children>
             <Label layoutX="79.0" layoutY="5.0" text="Downloads" textFill="WHITE">
                <font>
@@ -490,42 +366,21 @@
             <Button layoutX="144.0" layoutY="163.0" mnemonicParsing="false" style="-fx-text-fill: #ffffff;" styleClass="glassCard" text="Cancel" />
          </children>
       </Pane>
-      <Pane fx:id="progressBox" layoutX="435.0" layoutY="275.0" prefHeight="200.0" prefWidth="512.0" style="-fx-background-color: #022828; -fx-background-radius: 20; -fx-border-color: grey; -fx-border-radius: 20;" visible="false">
+      <Pane fx:id="progressBox" layoutX="427.0" layoutY="30.0" prefHeight="200.0" prefWidth="512.0" style="-fx-background-color: #022828; -fx-background-radius: 20; -fx-border-color: grey; -fx-border-radius: 20;" visible="false" viewOrder="-10">
          <effect>
             <DropShadow height="85.48" radius="32.715" spread="0.14" width="47.38" />
          </effect>
          <children>
-            <Button layoutX="27.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Background">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="188.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Proceed">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="353.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Cancel">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <ProgressBar layoutX="76.0" layoutY="114.0" prefHeight="14.0" prefWidth="360.0" progress="0.74" />
-            <Label layoutX="459.0" layoutY="112.0" text="74%" textFill="WHITE" />
-            <Label layoutX="76.0" layoutY="92.0" text="Downloading..." textFill="WHITE" />
+            <Button layoutX="27.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Background" />
+            <Button fx:id="proceedButton" layoutX="188.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Proceed" />
+            <Button fx:id="cancelButton" layoutX="353.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-text-fill: white;" styleClass="glassCard" text="Cancel" />
+            <ProgressBar fx:id="progressBar" layoutX="76.0" layoutY="114.0" prefHeight="14.0" prefWidth="360.0" progress="0.0" />
+            <Label fx:id="progressPercentLabel" layoutX="459.0" layoutY="112.0" text="0%" textFill="WHITE" />
+            <Label fx:id="progressStatusLabel" layoutX="76.0" layoutY="92.0" text="Downloading..." textFill="WHITE" />
             <Label alignment="CENTER" layoutX="21.0" layoutY="12.0" prefHeight="73.0" prefWidth="476.0" text="Kali Linux version 24.0.12 has been fetched and is underway." textFill="WHITE" wrapText="true" />
          </children>
       </Pane>
-      <Pane fx:id="alertBox" layoutX="532.0" layoutY="249.0" prefHeight="236.0" prefWidth="342.0" style="-fx-background-color: #022828; -fx-background-radius: 20; -fx-border-color: grey; -fx-border-radius: 20;" visible="false">
+      <Pane fx:id="alertBox" layoutX="512.0" layoutY="250.0" prefHeight="236.0" prefWidth="342.0" style="-fx-background-color: #022828; -fx-background-radius: 20; -fx-border-color: grey; -fx-border-radius: 20;" visible="false" viewOrder="-9">
          <effect>
             <DropShadow height="85.48" radius="32.715" spread="0.14" width="47.38" />
          </effect>
@@ -546,7 +401,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="profilePane" layoutX="827.0" layoutY="68.0" prefHeight="604.0" prefWidth="425.0" styleClass="glassCard" visible="false">
+      <Pane fx:id="profilePane" layoutX="827.0" layoutY="68.0" prefHeight="604.0" prefWidth="425.0" styleClass="glassCard" visible="true">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="142.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -601,10 +456,7 @@
             </Label>
          </children>
       </Pane>
-
-       
-      <fx:include source="CloudVM.fxml" />
-      <Pane layoutX="729.0" layoutY="27.0" prefHeight="670.0" prefWidth="618.0" styleClass="glassCard">
+      <Pane fx:id="connectAWSPane" layoutX="729.0" layoutY="27.0" prefHeight="670.0" prefWidth="618.0" styleClass="glassCard" visible="false">
          <children>
             <Label layoutX="147.0" layoutY="14.0" text="Connect your AWS to VMBuddy" textFill="WHITE">
                <font>
@@ -653,9 +505,13 @@
             </Button>
          </children>
       </Pane>
+
+      <!-- <fx:include source="AddNewVM.fxml" fx:id="addNewVMController"/> -->
+      <!-- AddNewVM will be loaded and added programmatically in App.java -->
+
       <!--
       <fx:include source="MyVMs.fxml" />
-      <fx:include source="AddNewVM.fxml" />
+      <fx:include source="CloudVM.fxml" />
       <fx:include source="ImageRepo.fxml" />
       <fx:include source="Logs.fxml" />
       <fx:include source="Snapshots.fxml" />

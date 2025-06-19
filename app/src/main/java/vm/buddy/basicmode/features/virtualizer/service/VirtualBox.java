@@ -14,9 +14,6 @@ public class VirtualBox {
      * @param installerPath Full path to the VirtualBox installer .exe
      * @throws IOException if installation fails
      * @throws InterruptedException if the process is interrupted
-     *
-     * By default, VirtualBox is installed to:
-     *   C:\Program Files\Oracle\VirtualBox\
      */
     public static void installVirtualBoxSilently(String installerPath) throws IOException, InterruptedException {
         File installer = new File(installerPath);
@@ -25,10 +22,20 @@ public class VirtualBox {
             return;
         }
 
+        // Set custom install directory
+        String userHome = System.getProperty("user.home");
+        String customInstallDir = userHome + File.separator + "VMBuddy" + File.separator + "Virtualizers" + File.separator + "installs" + File.separator + "VirtualBox";
+        // Create the directory if it doesn't exist
+        File customDir = new File(customInstallDir);
+        if (!customDir.exists()) {
+            customDir.mkdirs();
+        }
+
         // --silent: silent install
         // --no-shortcut: do not create desktop/start menu shortcuts
-        System.out.println("Running: " + installerPath + " --silent --no-shortcut");
-        ProcessBuilder pb = new ProcessBuilder(installerPath, "--silent", "--no-shortcut");
+        // --path: custom install directory (if supported by installer)
+        System.out.println("Running: " + installerPath + " --silent --no-shortcut --path " + customInstallDir);
+        ProcessBuilder pb = new ProcessBuilder(installerPath, "--silent", "--no-shortcut", "--path", customInstallDir);
         pb.redirectErrorStream(true);
         Process process = pb.start();
 
@@ -43,14 +50,15 @@ public class VirtualBox {
         int exitCode = process.waitFor();
         if (exitCode == 0) {
             System.out.println("VirtualBox installed successfully.");
-            System.out.println("Default install path: C:\\Program Files\\Oracle\\VirtualBox\\");
+            System.out.println("Custom install path: " + customInstallDir);
         } else {
             System.err.println("VirtualBox installation failed with exit code: " + exitCode);
         }
     }
 
     public static void runVBoxManage(String... args) throws IOException, InterruptedException {
-        String vboxManagePath = "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe";
+        String userHome = System.getProperty("user.home");
+        String vboxManagePath = userHome + File.separator + "VMBuddy" + File.separator + "Virtualizers" + File.separator + "installs" + File.separator + "VirtualBox" + File.separator + "VBoxManage.exe";
         // Build the command
         String[] command = new String[args.length + 1];
         command[0] = vboxManagePath;

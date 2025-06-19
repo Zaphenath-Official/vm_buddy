@@ -20,7 +20,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.RadioButton?>
 
-<Pane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="cloudVM_screen" layoutX="187.0" layoutY="178.0" prefHeight="492.0" prefWidth="402.0" styleClass="glassCard" visible="true">
+<Pane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="cloudVM_screen" layoutX="187.0" layoutY="178.0" prefHeight="492.0" prefWidth="402.0" styleClass="glassCard">
          <children>
             <TextField layoutX="45.0" layoutY="122.0" prefHeight="40.0" prefWidth="320.0" promptText="Access ID">
                <styleClass>
